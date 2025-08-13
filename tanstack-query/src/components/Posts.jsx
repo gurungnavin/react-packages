@@ -31,7 +31,8 @@ const Posts = () => {
       setLoading(true); // Immediately show loading
 
       // Wait 5 seconds first
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // await new Promise(resolve => setTimeout(resolve, 5000));
+
       const response = await axios.get('http://localhost:3000/posts')
       setList(response.data)
       setLoading(false)
@@ -49,37 +50,40 @@ const Posts = () => {
   }, [])
 
   if (loading) {
-    return <div className='flex justify-center items-center'>
-      <ImSpinner9 className='animate-spin' size={"50px"} style={{ color: 'goldenrod'}} />
+    return <div className='w-full h-screen flex justify-center items-center'>
+      <ImSpinner9 className='animate-spin' size={"50px"} style={{ color: 'goldenrod' }} />
       <div>
-      <h2 className='pl-8 text-2xl font-bold'>データ抽出中です.... <br /> <span className='text-lg font-light'>しばらくお待ちください!</span></h2>
+        <h2 className='pl-8 text-2xl font-bold'>データ抽出中です.... <br /> <span className='text-lg font-light'>しばらくお待ちください!</span></h2>
       </div>
     </div>
   }
 
-  if(error) {
+  if (error) {
     return (
-    <div className='flex justify-center items-center'>
-      <BiError className='animate-bounce' size={"70px"} style={{ color: 'red'}} />
-      <div>
-      <h2 className='pl-6 text-2xl font-bold text-red-600'>エラーが発生しました.... <br /> <span className='text-lg font-light text-black'>ネットワークまたはURLを直してください!</span></h2>
+      <div className='w-full h-screen flex justify-center items-center'>
+        <BiError className='animate-bounce' size={"70px"} style={{ color: 'red' }} />
+        <div>
+          <h2 className='pl-6 text-2xl font-bold text-red-600'>エラーが発生しました.... <br /> <span className='text-lg font-light text-black'>ネットワークまたはURLを直してください!</span></h2>
+        </div>
       </div>
-    </div>
     )
   }
 
 
   return (
-    <div className='w-full h-full grid grid-cols-4 gap-4'>
-      {
-        list.map((data) => (
-          <div key={data.id} className='w-40 bg-white rounded-bl-xl rounded-br-2xl'>
-            <img src={data.image} alt=""/>
-            <h3 className='uppercase font-bold text-center p-1'>{data.title}</h3>
-          </div>
-        ))
-      }
-    </div>
+    <>
+    <h2 className='text-center mt-3 text-5xl font-semibold'>Tranditional API Fetch</h2>
+      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 pt-20'>
+        {
+          list.map((data) => (
+            <div key={data.id} className=' bg-white rounded-bl-xl rounded-br-2xl h-full p-2'>
+              <img src={data.image} alt="" />
+              <h3 className='uppercase font-bold text-center py-4'>{data.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+    </>
   )
 }
 

@@ -27,10 +27,145 @@ Challenging when we have to deal with caching, deduplication of multiple request
 ## Project Setup
 
 1. New React project setup using CRA(Create React APP)
+   - We can build our React project by our choice. 
+
 2. Set up on API endpoint that serves mock data for use in our Application.
    "Using json-server package"
+
    -  a. Install json-server on React Project with ```npm install json-server```
    -  b. Create file on root of the React Project name : `db.json` or something else.
    -  c. Command on CLI : `npx json-server db.json`
+
 3. Set up react router and a few routes in the application.
+
+   -  a. Install React Router : `npm i react-router-dom` 
+   -  b. Import what we need : `import {BrowerRouter, Link, Routes, Route} from 'react-router-dom'` 
+   -  c. Wrap our app in `<BrowserRouter>` To enable routing
+   -  d. Wrap our app in `<BrowserRouter>` To enable routing
+
+   ```javascript
+      <BrowserRouter>
+         {/* Navigation links */}
+         <nav>
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+         </nav>
+
+         {/* Routing rules */}
+         <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+         </Routes>
+      </BrowserRouter>
+
+
+   ```
+
+
 4. Fetch data the traditional way using useEffect and useState.
+Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.com/users
+
+      ```javascript
+            import React, { useEffect, useState } from "react";
+
+            function Users() {
+            // State to store users
+            const [users, setUsers] = useState([]);
+            // State to track loading status
+            const [loading, setLoading] = useState(true);
+            // State to track errors
+            const [error, setError] = useState(null);
+
+            // Fetch data when the component mounts
+            useEffect(() => {
+               fetch("https://jsonplaceholder.typicode.com/users")
+                  .then((response) => {
+                  if (!response.ok) {
+                     throw new Error("Network response was not ok");
+                  }
+                  return response.json();
+                  })
+                  .then((data) => {
+                  setUsers(data);
+                  setLoading(false);
+                  })
+                  .catch((err) => {
+                  setError(err.message);
+                  setLoading(false);
+                  });
+            }, []); // Empty array → run once when component mounts
+
+            // Loading state
+            if (loading) return <p>Loading...</p>;
+
+            // Error state
+            if (error) return <p>Error: {error}</p>;
+
+            // Render user list
+            return (
+               <div>
+                  <h2>User List</h2>
+                  <ul>
+                  {users.map((user) => (
+                     <li key={user.id}>
+                        {user.name} ({user.email})
+                     </li>
+                  ))}
+                  </ul>
+               </div>
+            );
+            }
+
+            export default Users;
+
+      ```
+
+5. Data Fetching using useQuery(React Query/ Tanstack)
+
+## 1. Inside `main.jsx`
+- 1a. in `main.jsx`
+   ```js
+   import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+   ```
+   Import QueryClient and QueryClentProvider.
+
+- 1b. Create Query Client Instance
+   ```javascript
+   const queryClient = new QueryClient();
+   ```
+
+- 1c. Wrap `<App />` with `<QueryClientProvider>`
+   ```javascript
+   <QueryClientProvider client={queryClient}>
+      <App />
+   </QueryClientProvider>
+   ```
+
+## 2. Inside `PQPosts.jsx`
+
+- 2a. in `PQPosts.jsx`
+   ```js
+   import { useQuery } from '@tanstack/react-query'
+   ```
+   Import useQuery from tanstack/react-query.
+
+- 2b. Data fetch from React Query/Tanstack.
+
+   Use React Query’s useQuery to fetch data by destructuring `data`, `isLoading`, `isError`, and `error`. Pass a `queryKey:`(group name: posts) to identify the query and a queryFn that fetches data (e.g., axios.get) and returns res.data.
+
+   ```javascript   
+   const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["posts"],
+    queryFn: () => {
+      return axios.get('http://localhost:3000/posts')
+    }
+  })
+   ```
+
+- 2c. Map the data and handle loading and error states easily.
+  - After fetching data with React Query, use data.map() to render items.
+  - Use isLoading to show a loading message while data is fetching.
+  - Use isError and error to display errors if the fetch fails.
+
+
+
