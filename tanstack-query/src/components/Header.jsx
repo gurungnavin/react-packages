@@ -7,7 +7,7 @@ import Home from './Home'
 const Header = () => {
   return (
     <BrowserRouter>
-    <header className='w-full flex justify-between px-48 py-6 shadow-xl'>
+    <header className='w-full flex justify-between px-48 py-6 shadow-xl absolute top-0 left-0 z-20'>
       <Link to='/'>
       <h1 className='text-4xl uppercase font-bold'>Lo<span className='text-red-400 '>go</span></h1>
       </Link>

@@ -36,9 +36,9 @@ const RQPosts = () => {
 
   return (
     <>
-      <h2 className='text-center mt-3 text-5xl font-semibold'>React Query</h2>
+      <h2 className='text-center pt-28 text-5xl font-semibold'>React Query</h2>
 
-      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 pt-20'>
+      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 py-16'>
         {data?.data.map((e) => (
           <div key={e.id} className=' bg-white rounded-bl-xl rounded-br-2xl h-full p-2'>
             <img src={e.image} alt="" />

@@ -168,4 +168,10 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
          - Use isError and error to display errors if the fetch fails.
 
 
+6. DevTools
+React Query DevTools let us inspect, debug, and manage queries and cached data in real time.
 
+ - Setup DevTools
+   1.  install package with command : `npm i @tanstack/react-query-devtools`
+   2. Import `ReactQueryDevtools` on `main.jsx`
+   3. Inside `<QueryClientProvider>` after `<App />`, `<ReactQueryDevtools initialIsOpen = {false}>` "DONE"
