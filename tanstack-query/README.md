@@ -122,50 +122,50 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
 
 5. Data Fetching using useQuery(React Query/ Tanstack)
 
-## 1. Inside `main.jsx`
-- 1a. in `main.jsx`
-   ```js
-   import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-   ```
-   Import QueryClient and QueryClentProvider.
+      ## 5.1. Inside `main.jsx`
+      - 1a. in `main.jsx`
+         ```js
+         import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+         ```
+         Import QueryClient and QueryClentProvider.
 
-- 1b. Create Query Client Instance
-   ```javascript
-   const queryClient = new QueryClient();
-   ```
+      - 1b. Create Query Client Instance
+         ```javascript
+         const queryClient = new QueryClient();
+         ```
 
-- 1c. Wrap `<App />` with `<QueryClientProvider>`
-   ```javascript
-   <QueryClientProvider client={queryClient}>
-      <App />
-   </QueryClientProvider>
-   ```
+      - 1c. Wrap `<App />` with `<QueryClientProvider>`
+         ```javascript
+         <QueryClientProvider client={queryClient}>
+            <App />
+         </QueryClientProvider>
+         ```
 
-## 2. Inside `PQPosts.jsx`
+      ## 5.2. Inside `PQPosts.jsx`
 
-- 2a. in `PQPosts.jsx`
-   ```js
-   import { useQuery } from '@tanstack/react-query'
-   ```
-   Import useQuery from tanstack/react-query.
+      - 2a. in `PQPosts.jsx`
+         ```js
+         import { useQuery } from '@tanstack/react-query'
+         ```
+         Import useQuery from tanstack/react-query.
 
-- 2b. Data fetch from React Query/Tanstack.
+      - 2b. Data fetch from React Query/Tanstack.
 
-   Use React Query’s useQuery to fetch data by destructuring `data`, `isLoading`, `isError`, and `error`. Pass a `queryKey:`(group name: posts) to identify the query and a queryFn that fetches data (e.g., axios.get) and returns res.data.
+         Use React Query’s useQuery to fetch data by destructuring `data`, `isLoading`, `isError`, and `error`. Pass a `queryKey:`(group name: posts) to identify the query and a queryFn that fetches data (e.g., axios.get) and returns res.data.
 
-   ```javascript   
-   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["posts"],
-    queryFn: () => {
-      return axios.get('http://localhost:3000/posts')
-    }
-  })
-   ```
+         ```javascript   
+         const { data, isLoading, isError, error } = useQuery({
+         queryKey: ["posts"],
+         queryFn: () => {
+            return axios.get('http://localhost:3000/posts')
+            }
+         })
+         ```
 
-- 2c. Map the data and handle loading and error states easily.
-  - After fetching data with React Query, use data.map() to render items.
-  - Use isLoading to show a loading message while data is fetching.
-  - Use isError and error to display errors if the fetch fails.
+      - 2c. Map the data and handle loading and error states easily.
+         - After fetching data with React Query, use data.map() to render items.
+         - Use isLoading to show a loading message while data is fetching.
+         - Use isError and error to display errors if the fetch fails.
 
 
 
