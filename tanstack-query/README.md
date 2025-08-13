@@ -28,5 +28,9 @@ Challenging when we have to deal with caching, deduplication of multiple request
 
 1. New React project setup using CRA(Create React APP)
 2. Set up on API endpoint that serves mock data for use in our Application.
+   "Using json-server package"
+   -  a. Install json-server on React Project with ```npm install json-server```
+   -  b. Create file on root of the React Project name : `db.json` or something else.
+   -  c. Command on CLI : `npx json-server db.json`
 3. Set up react router and a few routes in the application.
 4. Fetch data the traditional way using useEffect and useState.

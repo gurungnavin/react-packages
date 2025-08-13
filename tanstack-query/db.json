@@ -1,0 +1,51 @@
+{
+  "posts":  [
+    {
+      "id": 1,
+      "title": "Federico Tonini",
+      "image": "https://picsum.photos/400/300?random=1"
+    },
+    {
+      "id": 2,
+      "title": "Mountain Adventure",
+      "image": "https://picsum.photos/400/300?random=2"
+    },
+    {
+      "id": 3,
+      "title": "Delicious Food",
+      "image": "https://picsum.photos/400/300?random=3"
+    },
+    {
+      "id": 4,
+      "title": "Urban Cityscape",
+      "image": "https://picsum.photos/400/300?random=4"
+    },
+    {
+      "id": 5,
+      "title": "Cute Puppy",
+      "image": "https://picsum.photos/400/300?random=5"
+    },
+    {
+      "id": 6,
+      "title": "Sunset Vibes",
+      "image": "https://picsum.photos/400/300?random=6"
+    },
+    {
+      "id": 7,
+      "title": "Green Forest",
+      "image": "https://picsum.photos/400/300?random=7"
+    },
+    {
+      "id": 8,
+      "title": "Desert Landscape",
+      "image": "https://picsum.photos/400/300?random=8"
+    }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "Navin Grg", "Email-Address" : "test@gmail.com"
+  }
+}
