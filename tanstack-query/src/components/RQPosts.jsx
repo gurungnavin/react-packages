@@ -5,14 +5,16 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 const RQPosts = () => {
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error, isFetching } = useQuery({
     queryKey: ["posts"],
     queryFn: () => {
       return axios.get('http://localhost:3000/posts')
-    }
+    },
+    staleTime: 30000, // 30 seconds
   })
 
-  console.table(data)
+  console.table(isFetching, error)
+
   if (isLoading) {
     return <div className='w-full h-screen flex justify-center items-center'>
       <ImSpinner9 className='animate-spin' size={"50px"} style={{ color: 'goldenrod' }} />

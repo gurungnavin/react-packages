@@ -169,9 +169,45 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
 
 
 6. DevTools
-React Query DevTools let us inspect, debug, and manage queries and cached data in real time.
 
- - Setup DevTools
-   1.  install package with command : `npm i @tanstack/react-query-devtools`
-   2. Import `ReactQueryDevtools` on `main.jsx`
-   3. Inside `<QueryClientProvider>` after `<App />`, `<ReactQueryDevtools initialIsOpen = {false}>` "DONE"
+   React Query DevTools let us inspect, debug, and manage queries and cached data in real time.
+
+   - Setup DevTools
+      1.  install package with command : `npm i @tanstack/react-query-devtools`
+      2. Import `ReactQueryDevtools` on `main.jsx`
+      3. Inside `<QueryClientProvider>` after `<App />`, `<ReactQueryDevtools initialIsOpen = {false}>` "DONE"
+
+
+
+
+7. Query Cache
+
+   `Query Cache` is React Query's built-in `storage` that saves server `data`. It makes apps faster by instantly showing cached content when users return the same pages, cutting load times and network use, while silently updating if the server data changes.
+
+   ### Two important cache settings in React Query
+   
+   1. staleTime
+   - How long cached data is considered usable without refetching.
+   - While fresh → React Query **does not request the server**.
+   - After it expires → data becomes **stale**, and the next query may trigger a **background refetch**.
+
+   2. cacheTime
+   - How long unused cached data stays in memory before being removed.
+   - Even stale data is kept until **cacheTime** ends.
+   - After that → the next query triggers a **full reload**.
+
+   ```javascript
+   const { data, isLoading } = useQuery(["users"],
+    () => axios.get("/api/users").then(res => res.data),
+      {
+         staleTime: 10000,  // 10 seconds
+         cacheTime: 60000,  // 1 minute
+      }
+    );
+
+   ```
+
+   - staleTime = prevent unnecessary automatic requests
+   - cacheTime = how long data is stored in memory
+
+
