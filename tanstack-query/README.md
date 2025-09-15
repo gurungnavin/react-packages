@@ -187,6 +187,9 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
    ### Two important cache settings in React Query
    
    1. staleTime
+
+      `staleTime` is used to define how long fetched data is considered fresh, preventing unnecessary refetches during that period.
+
    - How long cached data is considered usable without refetching.
    - While fresh → React Query **does not request the server**.
    - After it expires → data becomes **stale**, and the next query may trigger a **background refetch**.
@@ -210,4 +213,52 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
    - staleTime = prevent unnecessary automatic requests
    - cacheTime = how long data is stored in memory
 
+8. Polling  
+
+   `Polling` in React Query means automatically refetching data from the server at regular intervals. It is useful for real-time applications like trading dashboards or live result displays.
+
+   React Query offers two key options for polling:
+
+   1. `refetchInterval` – Sets how often data should be refetched (e.g. every 5 seconds). It only works while the app is in the foreground (i.e., the tab is active).
+
+   2. `refetchIntervalInBackground`: true – Keeps polling active even when the app is in the background (e.g., user switches tabs or minimizes the browser).
+
+
+   ```javascript
+   const { data, isLoading, isError, error, isFetching } = useQuery({
+    queryKey: ["posts"],
+    queryFn: () => {
+      return axios.get('http://localhost:3000/posts')
+    },
+    refetchInterval: 4000, // 4 seconds
+    refetchIntervalInBackground: true, // refetch even when the window is not focused
+    })
+   ```
+
+9. USEQUERY on Click 
+
+9. useQuery on Click
+
+   To fetch data only when a user triggers an event (e.g., clicking a button), you can configure useQuery like this:
+
+   Set **enabled: false** – This prevents the query from running automatically when the component mounts.
+
+   Manually trigger the query using the **refetch()** function returned by useQuery.
+
+   ```javascript
+    // Number 2, 👇use refetch function to fetch data on button click
+   const { data, isLoading, isError, error, isFetching, refetch } = useQuery({
+    queryKey: ["posts"],
+    queryFn: () => {
+      return axios.get('http://localhost:3000/posts')
+    },
+    enabled: false // 👈 Number 1, disable automatic query on mount
+   })
+   ```
+   Add a button to trigger refetching through a click event.
+   ```HTML
+   <button onClick={() => refetch()}>
+      Fetch Data on Click
+   </button>
+   ```
 

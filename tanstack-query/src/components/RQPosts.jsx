@@ -5,15 +5,17 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 const RQPosts = () => {
-  const { data, isLoading, isError, error, isFetching } = useQuery({
+  // Number 2, use refetch function to fetch data on button click
+  const { data, isLoading, isError, error, isFetching, refetch } = useQuery({
     queryKey: ["posts"],
     queryFn: () => {
       return axios.get('http://localhost:3000/posts')
     },
-    staleTime: 30000, // 30 seconds
+    enabled: false // Number 1, disable automatic query on mount
+   
   })
 
-  console.table(isFetching, error)
+  console.log(isFetching, error)
 
   if (isLoading) {
     return <div className='w-full h-screen flex justify-center items-center'>
@@ -40,6 +42,12 @@ const RQPosts = () => {
     <>
       <h2 className='text-center pt-28 text-5xl font-semibold'>React Query</h2>
 
+      
+      <button 
+      className='bg-amber-400 p-4 mx-20 my-1 text-3xl cursor-pointer rounded-xl hover:bg-amber-500 active:scale-90 transition-all duration-150'
+      // Number 3, fetch data on button click
+      onClick={() => refetch()}
+      >Fetch Data on Click</button>
       <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 py-16'>
         {data?.data.map((e) => (
           <div key={e.id} className=' bg-white rounded-bl-xl rounded-br-2xl h-full p-2'>
