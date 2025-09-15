@@ -237,8 +237,6 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
 
 9. USEQUERY on Click 
 
-9. useQuery on Click
-
    To fetch data only when a user triggers an event (e.g., clicking a button), you can configure useQuery like this:
 
    Set **enabled: false** – This prevents the query from running automatically when the component mounts.
