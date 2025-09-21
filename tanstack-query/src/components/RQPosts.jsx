@@ -45,7 +45,7 @@ const RQPosts = () => {
 
 
       <button
-        className='bg-amber-400 p-4 mx-20 my-1 text-3xl cursor-pointer rounded-xl hover:bg-amber-500 active:scale-90 transition-all duration-150'
+        className='bg-amber-400 p-2 mx-10 my-1 text-xl font-bold cursor-pointer rounded-xl hover:bg-amber-500 active:scale-90 transition-all duration-150'
         // Number 3, fetch data on button click
         onClick={() => refetch()}
       >Fetch Data on Click</button>

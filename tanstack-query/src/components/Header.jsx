@@ -4,6 +4,7 @@ import Posts from './Posts'
 import RQPosts from './RQPosts'
 import Home from './Home'
 import PostDetailsRQ from './PostDetailsRQ'
+import PaginationRQuery from './PaginationRQuery'
 
 const Header = () => {
   return (
@@ -16,6 +17,7 @@ const Header = () => {
         <Link to='/'>Home</Link>
         <Link to='/posts'>Posts</Link>
         <Link to='/rqposts'>RQPost</Link>
+        <Link to='/paginationrquery'>PaginationRQ</Link>
       </nav>
     </header>
       <Routes>
@@ -23,6 +25,7 @@ const Header = () => {
         <Route path='/posts' element= {<Posts />} />
         <Route path='/rqposts' element= {<RQPosts />} />
         <Route path='/rqposts/:postId' element= {<PostDetailsRQ />}/>
+        <Route path = '/paginationrquery' element= {<PaginationRQuery />}/>
       </Routes>
     </BrowserRouter>
   )
