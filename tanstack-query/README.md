@@ -260,3 +260,56 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
    </button>
    ```
 
+
+10. QUERY by ID 
+
+      A `Query by ID` means we use a unique identifier to fetch a specific item's details. It's a simple way to get exact the data we need for one partificular items.
+
+   - How to Setup Query by ID
+   1. `Create the Detail page` : Make a page that shows the details for a single item
+
+      ```javascript
+      const { postId } = useParams(); // get id of every items
+      const navigate = useNavigate();  // Initialize useNavigate hook for use back.
+
+      const fetchPostDetails = () => axios.get(`http://localhost:3000/posts/${postId}`);
+      const { data, isLoading, isError, error } = useQuery({
+      queryKey: ['posts', postId],
+      queryFn: fetchPostDetails,      
+      });
+
+      const { title = "No Title", image = "" } = data?.data || {};
+      // destructing titile and image from data
+
+      return (
+      <button
+        onClick={() => navigate(-1)}  // Navigate back to the previous page
+      >
+        Go Back
+      </button>
+
+         // Rest of the codes.....
+      )
+
+      ```
+   2. `Setup the Route` : Add a route like *** /posts/postId *** so each item has its own URL.
+
+      ```javascript
+      <Route path='/rqposts/:postId' element= {<PostDetailsRQ />}/>
+      ```
+
+   3. `Link with an anchor tag` : Wrap it in a clickable link so when users click, they can go straight to that detail page.
+
+      ```javascript
+      {data?.data.map((e) => (
+          <Link to={`/rqposts/${e.id}`} key={e.id}>
+         // Wrap content in a clickable link to take users directly to the detail page.
+         <div key={e.id} className=' bg-white rounded-bl-xl rounded-br-2xl h-full p-2'>
+            <img src={e.image} alt="" />
+            <h3 className='uppercase font-bold text-center py-4'>{e.title}</h3>
+         </div>
+         </Link>
+      ))
+      }
+      ```
+

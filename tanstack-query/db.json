@@ -1,45 +1,53 @@
 {
   "posts":  [
-    {
-      "id": 1,
-      "title": "Federico Tonini 1",
-      "image": "https://picsum.photos/400/300?random=1"
-    },
-    {
-      "id": 2,
-      "title": "Mountain Adventure",
-      "image": "https://picsum.photos/400/300?random=2"
-    },
-    {
-      "id": 3,
-      "title": "Delicious Food",
-      "image": "https://picsum.photos/400/300?random=3"
-    },
-    {
-      "id": 4,
-      "title": "Urban Cityscape",
-      "image": "https://picsum.photos/400/300?random=4"
-    },
-    {
-      "id": 5,
-      "title": "Cute Puppy",
-      "image": "https://picsum.photos/400/300?random=5"
-    },
-    {
-      "id": 6,
-      "title": "Sunset Vibes",
-      "image": "https://picsum.photos/400/300?random=6"
-    },
-    {
-      "id": 7,
-      "title": "Green Forest",
-      "image": "https://picsum.photos/400/300?random=7"
-    },
-    {
-      "id": 8,
-      "title": "Desert Landscape",
-      "image": "https://picsum.photos/400/300?random=8"
-    }
+   {
+    "id": 1,
+    "title": "Federico Tonini 1",
+    "image": "https://picsum.photos/400/300?random=1",
+    "description": "This is a sample description for Federico Tonini 1. It highlights the uniqueness and charm of the experience that this image portrays, offering a glimpse into a wonderful journey."
+  },
+  {
+    "id": 2,
+    "title": "Mountain Adventure",
+    "image": "https://picsum.photos/400/300?random=2",
+    "description": "This is a sample description for Mountain Adventure. Explore the exhilarating heights and breathtaking views of the towering mountains, capturing the essence of adventure and discovery."
+  },
+  {
+    "id": 3,
+    "title": "Delicious Food",
+    "image": "https://picsum.photos/400/300?random=3",
+    "description": "This is a sample description for Delicious Food. A mouth-watering collection of culinary masterpieces that will leave you craving more, showcasing the beauty and artistry of fine dining."
+  },
+  {
+    "id": 4,
+    "title": "Urban Cityscape",
+    "image": "https://picsum.photos/400/300?random=4",
+    "description": "This is a sample description for Urban Cityscape. Experience the hustle and bustle of modern cities, where every street corner tells a unique story of progress, culture, and innovation."
+  },
+  {
+    "id": 5,
+    "title": "Cute Puppy",
+    "image": "https://picsum.photos/400/300?random=5",
+    "description": "This is a sample description for Cute Puppy. Adorable and heartwarming, this playful little puppy brings joy and innocence to every moment, reminding us of the simple pleasures of life."
+  },
+  {
+    "id": 6,
+    "title": "Sunset Vibes",
+    "image": "https://picsum.photos/400/300?random=6",
+    "description": "This is a sample description for Sunset Vibes. A peaceful and serene moment captured in time, where the colors of the sky blend harmoniously, inviting you to relax and embrace the beauty of nature."
+  },
+  {
+    "id": 7,
+    "title": "Green Forest",
+    "image": "https://picsum.photos/400/300?random=7",
+    "description": "This is a sample description for Green Forest. Immerse yourself in the tranquility of lush greenery and the soothing sounds of nature, where every leaf and tree contributes to a peaceful and rejuvenating atmosphere."
+  },
+  {
+    "id": 8,
+    "title": "Desert Landscape",
+    "image": "https://picsum.photos/400/300?random=8",
+    "description": "This is a sample description for Desert Landscape. A vast and timeless expanse of golden sand dunes that stretch endlessly, offering a unique sense of solitude and adventure in the heart of the desert."
+  }
   ],
   "comments": [
     { "id": "1", "text": "a comment about post 1", "postId": "1" },

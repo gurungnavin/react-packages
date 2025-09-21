@@ -3,6 +3,7 @@ import {BrowserRouter, Link, Routes, Route} from 'react-router-dom'
 import Posts from './Posts'
 import RQPosts from './RQPosts'
 import Home from './Home'
+import PostDetailsRQ from './PostDetailsRQ'
 
 const Header = () => {
   return (
@@ -21,6 +22,7 @@ const Header = () => {
         <Route path='/' element= {<Home />} />
         <Route path='/posts' element= {<Posts />} />
         <Route path='/rqposts' element= {<RQPosts />} />
+        <Route path='/rqposts/:postId' element= {<PostDetailsRQ />}/>
       </Routes>
     </BrowserRouter>
   )
