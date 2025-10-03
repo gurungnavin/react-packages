@@ -230,6 +230,186 @@
       "name": "Clementine",
       "image": "https://picsum.photos/200/300?random=30",
       "description": "A small, seedless citrus fruit with a sweet and tangy flavor."
+    },
+    {
+      "id": 31,
+      "name": "Mango 2",
+      "image": "https://picsum.photos/200/300?random=31",
+      "description": "A sweet, juicy tropical fruit with a unique flavor."
+    },
+    {
+      "id": 32,
+      "name": "Apple 2",
+      "image": "https://picsum.photos/200/300?random=32",
+      "description": "A sweet and crunchy fruit, perfect for snacking or baking."
+    },
+    {
+      "id": 33,
+      "name": "Banana 2",
+      "image": "https://picsum.photos/200/300?random=33",
+      "description": "A soft and sweet fruit, ideal for smoothies or as a quick snack."
+    },
+    {
+      "id": 34,
+      "name": "Orange 2",
+      "image": "https://picsum.photos/200/300?random=34",
+      "description": "A tangy and juicy fruit, full of vitamin C."
+    },
+    {
+      "id": 35,
+      "name": "Grape 2",
+      "image": "https://picsum.photos/200/300?random=35",
+      "description": "A small, sweet fruit that grows in bunches, perfect for snacking."
+    },
+    {
+      "id": 36,
+      "name": "Pineapple 2",
+      "image": "https://picsum.photos/200/300?random=36",
+      "description": "A tropical fruit with a sweet and tangy flavor, perfect for smoothies."
+    },
+    {
+      "id": 37,
+      "name": "Strawberry 2",
+      "image": "https://picsum.photos/200/300?random=37",
+      "description": "A juicy, red fruit with a sweet and tangy flavor."
+    },
+    {
+      "id": 38,
+      "name": "Blueberry 2",
+      "image": "https://picsum.photos/200/300?random=38",
+      "description": "A small, sweet fruit packed with antioxidants."
+    },
+    {
+      "id": 39,
+      "name": "Peach 2",
+      "image": "https://picsum.photos/200/300?random=39",
+      "description": "A juicy, soft fruit with a sweet flavor and fuzzy skin."
+    },
+    {
+      "id": 40,
+      "name": "Pear 2",
+      "image": "https://picsum.photos/200/300?random=40",
+      "description": "A sweet, juicy fruit with a smooth texture and a slightly tart flavor."
+    },
+    {
+      "id": 41,
+      "name": "Cherry 2",
+      "image": "https://picsum.photos/200/300?random=41",
+      "description": "A small, red fruit with a sweet and tart flavor."
+    },
+    {
+      "id": 42,
+      "name": "Kiwi 2",
+      "image": "https://picsum.photos/200/300?random=42",
+      "description": "A small, brown fruit with a tangy green interior."
+    },
+    {
+      "id": 43,
+      "name": "Watermelon 2",
+      "image": "https://picsum.photos/200/300?random=43",
+      "description": "A large, juicy fruit with a sweet, refreshing flavor."
+    },
+    {
+      "id": 44,
+      "name": "Lemon 2",
+      "image": "https://picsum.photos/200/300?random=44",
+      "description": "A tart and tangy citrus fruit, perfect for adding zest to dishes."
+    },
+    {
+      "id": 45,
+      "name": "Plum 2",
+      "image": "https://picsum.photos/200/300?random=45",
+      "description": "A small, sweet fruit with a smooth skin and juicy interior."
+    },
+    {
+      "id": 46,
+      "name": "Apricot 2",
+      "image": "https://picsum.photos/200/300?random=46",
+      "description": "A small, sweet fruit with a slightly tart flavor, perfect for snacking."
+    },
+    {
+      "id": 47,
+      "name": "Papaya 2",
+      "image": "https://picsum.photos/200/300?random=47",
+      "description": "A tropical fruit with a sweet, soft flesh."
+    },
+    {
+      "id": 48,
+      "name": "Cantaloupe 2",
+      "image": "https://picsum.photos/200/300?random=48",
+      "description": "A melon with sweet, orange flesh, perfect for summer."
+    },
+    {
+      "id": 49,
+      "name": "Raspberry 2",
+      "image": "https://picsum.photos/200/300?random=49",
+      "description": "A small, red fruit with a sweet, tangy flavor."
+    },
+    {
+      "id": 50,
+      "name": "Blackberry 2",
+      "image": "https://picsum.photos/200/300?random=50",
+      "description": "A dark, sweet fruit packed with vitamins and antioxidants."
+    },
+    {
+      "id": 51,
+      "name": "Tangerine 2",
+      "image": "https://picsum.photos/200/300?random=51",
+      "description": "A small, sweet citrus fruit that’s easy to peel."
+    },
+    {
+      "id": 52,
+      "name": "Fig 2",
+      "image": "https://picsum.photos/200/300?random=52",
+      "description": "A sweet fruit with a soft texture and a rich, earthy flavor."
+    },
+    {
+      "id": 53,
+      "name": "Pomegranate 2",
+      "image": "https://picsum.photos/200/300?random=53",
+      "description": "A fruit with jewel-like seeds and a sweet, tangy flavor."
+    },
+    {
+      "id": 54,
+      "name": "Grapefruit 2",
+      "image": "https://picsum.photos/200/300?random=54",
+      "description": "A large, tangy citrus fruit with a slightly bitter taste."
+    },
+    {
+      "id": 55,
+      "name": "Dragon Fruit 2",
+      "image": "https://picsum.photos/200/300?random=55",
+      "description": "A tropical fruit with a sweet, mild flavor and a vibrant pink skin."
+    },
+    {
+      "id": 56,
+      "name": "Coconut 2",
+      "image": "https://picsum.photos/200/300?random=56",
+      "description": "A tropical fruit with a hard outer shell and sweet, milky interior."
+    },
+    {
+      "id": 57,
+      "name": "Starfruit 2",
+      "image": "https://picsum.photos/200/300?random=57",
+      "description": "A unique fruit with a star-shaped appearance and a tangy flavor."
+    },
+    {
+      "id": 58,
+      "name": "Acai Berry 2",
+      "image": "https://picsum.photos/200/300?random=58",
+      "description": "A small, dark purple fruit known for its antioxidant-rich properties."
+    },
+    {
+      "id": 59,
+      "name": "Lychee 2",
+      "image": "https://picsum.photos/200/300?random=59",
+      "description": "A tropical fruit with a sweet, floral flavor and a bumpy red exterior."
+    },
+    {
+      "id": 60,
+      "name": "Clementine 2",
+      "image": "https://picsum.photos/200/300?random=60",
+      "description": "A small, seedless citrus fruit with a sweet and tangy flavor."
     }
   ],
 

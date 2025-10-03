@@ -1,5 +1,5 @@
 
-import { keepPreviousData, useInfiniteQuery } from "@tanstack/react-query";
+import {useInfiniteQuery } from "@tanstack/react-query";
 import axios, { all } from "axios";
 import { ImSpinner9 } from "react-icons/im";
 import { BiError } from "react-icons/bi";
@@ -53,14 +53,14 @@ const LoadMore = () => {
   
   // Data display
   return (
-    <div className='w-full min-h-screen flex flex-col justify-end items-center bg-gray-50 py-8 mt-4'>
-
-      <div className='w-full max-w-xl border border-black rounded-lg bg-white shadow-md p-4 mb-6 overflow-y-auto' style={{ maxHeight: '70vh' }}>
+    <div className='w-full h-full flex flex-col justify-start items-center bg-white py-8'>
+      
+      <div className='w-xl max-w-xl border border-black rounded-lg bg-blue-200 shadow-md p-4 mb-6 overflow-y-auto' style={{ maxHeight: '65vh' }}>
         {data?.pages?.flatMap(page =>
           page.data.map(fruit => (
-            <div key={fruit.id} className='flex items-center gap-3 p-3 mb-3 border-2 bg-amber-400 rounded-md shadow-sm hover:bg-amber-100 hover:scale-[1.03] transition'>
+            <div key={fruit.id} className='flex items-center gap-2 p-3 mb-3 border-2 bg-amber-500 text-white rounded-md shadow-sm hover:bg-amber-100 hover:text-black hover:scale-[1.03] transition'>
               <span className='font-bold text-amber-700'>{fruit.id}.</span>
-              <span className='text-lg font-semibold'>{fruit.name}</span>
+              <span className='text-xl font-semibold'>{fruit.name}</span>
             </div>
           ))
         )}

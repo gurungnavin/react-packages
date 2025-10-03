@@ -313,3 +313,82 @@ Let's say we want to fetch a list of user from https://jsonplaceholder.typicode.
       }
       ```
 
+---
+
+11. Infinite Scroll(Load More) 
+
+      Infinite Scroll in React Query loads data in pieces and fetches more when you scroll or click a button.
+
+      For infinite scrolling, we are using useInfiniteQuery instead of useQuery. The useInfiniteQuery hook allows us to use:
+
+      `1. hasNextPage`: To check if there’s more data to load.
+
+      `2. isFetchingNextPage`: To check if the next page is currently being fetched.
+
+      `3. fetchNextPage`: Function to trigger fetching the next page.
+      
+      `4. data`: Contains the paginated data (usually in pages).
+      
+      `5. getNextPageParam`: To determine the next page's pageParam.
+
+      `6. initialPageParam`: Sets the initial pageParam (e.g., starting at 1).
+
+
+      ```javascript
+      // Function to fetch paginated data
+      const loadMoreQuery = ({pageParam}) => {
+      return axios.get(`http://localhost:3000/fruits/?_limit=5&_page=${pageParam}`)
+      };
+      const LoadMore = () => {  
+      const {data, isLoading, isError, error, hasNextPage, isFetchingNextPage, fetchNextPage} = useInfiniteQuery({
+         queryKey : ['fruits'],
+         queryFn : loadMoreQuery,
+         initialPageParam: 1,
+         getNextPageParam : (_lastPage, allPages) => {
+            if(allPages.length < 4){
+            return allPages.length + 1
+            }else{
+            return undefined
+            }
+         }
+      })
+      ```
+   - This code fetches a paginated list of fruits from a local server using useInfiniteQuery from React Query. It starts from page 1 and loads 5 items at a time. When the user triggers fetchNextPage, it loads the next set of fruits, stopping after 4 pages. The function manages loading, errors, and tracks if there's more data to fetch, making it easy to implement an infinite scroll or "Load More" button.
+
+      ---
+      Return the Data with JSX.
+
+      ```HTML
+
+      <div>
+        {data?.pages?.flatMap(page =>
+          page.data.map(fruit => (
+            <div key={fruit.id}>
+              <span>{fruit.id}.</span>
+              <span>{fruit.name}</span>
+            </div>
+          ))
+        )}
+
+        {isFetchingNextPage && (
+          <div>
+            <ImSpinner9 />
+            <span>Loading more...</span>
+          </div>
+        )}
+      </div>
+
+      <button
+        onClick={() => fetchNextPage()}
+        disabled={!hasNextPage || isFetchingNextPage}>
+        {isFetchingNextPage
+          ? 'データ抽出中です...'
+          : hasNextPage
+            ? 'もっと見る'
+            : 'これ以上のデータはありません'}
+      </button>
+      ```
+
+12. Infinite Scroll(While Scrolling: Data will fetch)
+
+

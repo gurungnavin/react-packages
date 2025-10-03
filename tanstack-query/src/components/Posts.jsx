@@ -72,8 +72,8 @@ const Posts = () => {
 
   return (
     <>
-    <h2 className='text-center pt-28 text-5xl font-semibold'>Tranditional API Fetch</h2>
-      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 pt-16'>
+    <h2 className='text-center text-3xl font-semibold'>Tranditional API Fetch</h2>
+      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 pt-4'>
         {
           list.map((data) => (
             <div key={data.id} className=' bg-white rounded-bl-xl rounded-br-2xl h-full p-2'>

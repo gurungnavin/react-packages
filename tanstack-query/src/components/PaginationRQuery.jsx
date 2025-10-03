@@ -45,13 +45,13 @@ const PaginationRQuery = () => {
 
   // Data display
 return (
-  <div className="w-full h-screen flex flex-col items-center justify-center gap-8 p-6">
+  <div className="w-full flex flex-col items-center justify-center gap-8">
     {/* Fruits List */}
     <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {data?.data.map(item => (
         <div
           key={item.id}
-          className="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+          className="bg-white border p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
           <h3 className="text-xl font-semibold text-center text-gray-800">{item.name}</h3>
         </div>
@@ -59,9 +59,9 @@ return (
     </div>
 
     {/* Pagination Controls */}
-    <div className="flex justify-center gap-8">
+    <div className="flex justify-center gap-2">
       <button
-        className={`p-3 text-lg font-medium rounded-full transition-all duration-300 ${
+        className={`p-2 text-sm font-medium border rounded-2xl transition-all duration-300 ${
           page === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-amber-400 hover:bg-amber-500'
         }`}
         onClick={() => setPage(prev => prev - 1)}
@@ -70,7 +70,7 @@ return (
         Previous
       </button>
       <button
-        className={`p-3 text-lg font-medium rounded-full transition-all duration-300 ${
+        className={`p-2 text-sm font-medium rounded-2xl border transition-all duration-300 ${
           page === 6 ? 'bg-gray-300 cursor-not-allowed' : 'bg-amber-400 hover:bg-amber-500'
         }`}
         onClick={() => setPage(prev => prev + 1)}

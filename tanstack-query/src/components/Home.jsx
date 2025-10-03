@@ -1,11 +1,10 @@
-import React from 'react'
 
 const Home = () => {
   return (
-      <div className= 'w-full h-screen flex flex-col items-center justify-center'>
+      <div className='w-full flex flex-col justify-center items-center gap-2'>
         <h2 className='text-4xl'>Welcom Page</h2>
-        <p className='mt-4'>Post: Api data fetch from fetch(), useState and useEffect()</p>
-        <p className='mt-4'>RQPost: Api data fetch With React Query</p>
+        <p>Post: Api data fetch from fetch(), useState and useEffect()</p>
+        <p>RQPost: Api data fetch With React Query</p>
       </div>
   )
 }

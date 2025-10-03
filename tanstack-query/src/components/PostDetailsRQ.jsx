@@ -43,16 +43,16 @@ const PostDetailsRQ = () => {
   const { title = "No Title", image = "" } = data?.data || {};
 
   return (
-    <div className="w-full h-screen p-8 flex items-center justify-center flex-col">
+    <div className="w-full h-full flex items-center justify-center flex-col">
       <button
         onClick={() => navigate(-1)}  // Navigate back to the previous page
-        className="mt-12 mb-2 bg-gray-500 text-black py-2 px-3 rounded-lg hover:bg-black  hover:text-white transition-all duration-150 self-start"
+        className=" bg-gray-100 border text-black py-2 px-3 rounded-lg hover:bg-black  hover:text-white transition-all duration-150 self-start"
       >
         <IoChevronBackOutline />
       </button>
-      <div className="w-xs flex justify-center items-center flex-col bg-amber-50 p-3 rounded-lg shadow-md">
+      <div className="w-md flex justify-center items-center flex-col bg-amber-50 p-4 border rounded-lg shadow-md">
         {image && (
-          <img src={image} alt={title} className="w-xs h-auto rounded-lg shadow-lg" />
+          <img src={image} alt={title} className="w-md h-auto rounded-lg shadow-lg" />
         )}
       <h2 className="text-center text-3xl font-bold my-4">{title}</h2>
       <p className="text-center text-sm max-w-2xl">

@@ -41,15 +41,13 @@ const RQPosts = () => {
 
   return (
     <>
-      <h2 className='text-center pt-28 text-5xl font-semibold'>React Query</h2>
-
-
+      <h2 className='text-center text-3xl font-semibold'>React Query</h2>
       <button
-        className='bg-amber-400 p-2 mx-10 my-1 text-xl font-bold cursor-pointer rounded-xl hover:bg-amber-500 active:scale-90 transition-all duration-150'
+        className='bg-green-300 p-2 mx-10 text-xl font-bold cursor-pointer hover:bg-amber-500 active:scale-90 transition-all duration-150'
         // Number 3, fetch data on button click
         onClick={() => refetch()}
       >Fetch Data on Click</button>
-      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 py-16'>
+      <div className='w-full grid grid-cols-3 md:grid-cols-4 gap-4 px-48 h-52 py-4'>
         {data?.data.map((e) => (
           <Link to={`/rqposts/${e.id}`} key={e.id}>
             <div key={e.id} className=' bg-white rounded-bl-xl rounded-br-2xl h-full p-2'>
