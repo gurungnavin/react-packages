@@ -53,9 +53,9 @@ const LoadMore = () => {
   
   // Data display
   return (
-    <div className='w-full h-full flex flex-col justify-start items-center bg-white py-8'>
+    <div className='w-full h-full flex flex-col justify-start items-center py-8'>
       
-      <div className='w-xl max-w-xl border border-black rounded-lg bg-blue-200 shadow-md p-4 mb-6 overflow-y-auto' style={{ maxHeight: '65vh' }}>
+      <div className='w-xl max-w-xl border border-black bg-blue-50 rounded-lg shadow-md p-4 mb-6 overflow-y-auto' style={{ maxHeight: '65vh' }}>
         {data?.pages?.flatMap(page =>
           page.data.map(fruit => (
             <div key={fruit.id} className='flex items-center gap-2 p-3 mb-3 border-2 bg-amber-500 text-white rounded-md shadow-sm hover:bg-amber-100 hover:text-black hover:scale-[1.03] transition'>

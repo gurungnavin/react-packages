@@ -49,7 +49,6 @@
       "description": "This is a sample description for Desert Landscape. A vast and timeless expanse of golden sand dunes that stretch endlessly, offering a unique sense of solitude and adventure in the heart of the desert."
     }
   ],
-
   "fruits": [
     {
       "id": 1,
@@ -412,10 +411,39 @@
       "description": "A small, seedless citrus fruit with a sweet and tangy flavor."
     }
   ],
-
+  "todos": [
+    {
+      "id": 1,
+      "title": "Read Book",
+      "body": "The Physcology of Money"
+    },
+    {
+      "id": 2,
+      "title": "Watch Movie",
+      "body": "Inception"
+    },
+    {
+      "id": 3,
+      "title": "Exercise",
+      "body": "Morning Jogging"
+    },
+    {
+      "id": 4,
+      "title": "Cook Dinner",
+      "body": "Pasta with Marinara Sauce"
+    }
+  ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
     "name": "Navin Grg",
